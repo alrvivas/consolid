@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+{% block statics %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+<!-- Wide card with share menu button -->
+<style>
+.demo-card-wide.mdl-card {
+  width: 100%;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;  
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+</style>
+{% endblock %}
+{% block content %}
+{% include "banner.html" %}	
+<div class="mdl-grid">
+	<div class="mdl-layout-spacer"></div>
+	<div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--8-col-phone ">		
+		<div class="mdl-grid"><!--comunicados-->
+			<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--6-col-phone ">
+				<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+				  	<div class="mdl-card__title" style="background: url('{% static 'img/lineas-aereas.png' %}') center / cover;color: #03a9f4 !important;">
+					    <h2 class="mdl-card__title-text">Comunicados Lineas Areas</h2>
+				  	</div>
+				  	<div class="mdl-card__supporting-text">
+				    	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				    	Mauris sagittis pellentesque lacus eleifend lacinia...
+				  	</div>
+				 	<div class="mdl-card__actions mdl-card--border">
+				   		<a  href="{% url 'comunicados' %}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+				      		Ver más
+				    	</a>
+				  	</div>
+				  	<div class="mdl-card__menu">
+				    	<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+				      		<i class="material-icons">share</i>
+				    	</button>
+				  	</div>
+				</div>
+			</div>
+			<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--6-col-phone ">
+				<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+				  	<div class="mdl-card__title" style="background: url('{% static 'img/circulares.png' %}') center / cover;">
+					    <h2 class="mdl-card__title-text">Circulares</h2>
+				  	</div>
+				  	<div class="mdl-card__supporting-text">
+				    	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				    	Mauris sagittis pellentesque lacus eleifend lacinia...
+				  	</div>
+				 	<div class="mdl-card__actions mdl-card--border">
+				   		<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+				      		Ver más
+				    	</a>
+				  	</div>
+				  	<div class="mdl-card__menu">
+				    	<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+				      		<i class="material-icons">share</i>
+				    	</button>
+				  	</div>
+				</div>
+			</div>			
+		</div>
+		<div class="mdl-grid"><!--comunicados-->
+			<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--6-col-phone ">
+				<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+				  	<div class="mdl-card__title" style="background: url('{% static 'img/comiciones.png' %}') center / cover;">
+					    <h2 class="mdl-card__title-text">Tabla de Comisiones</h2>
+				  	</div>
+				  	<div class="mdl-card__supporting-text">
+				    	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				    	Mauris sagittis pellentesque lacus eleifend lacinia...
+				  	</div>
+				 	<div class="mdl-card__actions mdl-card--border">
+				   		<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+				      		Ver más
+				    	</a>
+				  	</div>
+				  	<div class="mdl-card__menu">
+				    	<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+				      		<i class="material-icons">share</i>
+				    	</button>
+				  	</div>
+				</div>
+			</div>
+			<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--6-col-phone ">
+				<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+				  	<div class="mdl-card__title" style="background: url('{% static 'img/avisos.png' %}') center / cover;">
+					    <h2 class="mdl-card__title-text">Avisos Varios</h2>
+				  	</div>
+				  	<div class="mdl-card__supporting-text">
+				    	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				    	Mauris sagittis pellentesque lacus eleifend lacinia...
+				  	</div>
+				 	<div class="mdl-card__actions mdl-card--border">
+				   		<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+				      		Ver más
+				    	</a>
+				  	</div>
+				  	<div class="mdl-card__menu">
+				    	<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+				      		<i class="material-icons">share</i>
+				    	</button>
+				  	</div>
+				</div>
+			</div>			
+		</div>
+	</div>
+	<div class="mdl-layout-spacer"></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script>
+$(".carousel-inner div" ).first().addClass( "active" );
+$(".carousel-indicators li" ).first().addClass( "active" );
+</script>
+{% endblock %} 

@@ -1,0 +1,50 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="es_MX">
+<head>
+	<title>{% block title %}{% if page_title %}{{ page_title }} - {% endif %}{{ site_name }}{% endblock %}</title>
+	{% include "styles.html" %}
+	{% block statics %}{% endblock %}
+</head>
+<body >
+	<!-- Always shows a header, even in smaller screens. -->
+	<div class="mdl-layout mdl-js-layout ">
+	  	<header class="mdl-layout__header mdl-layout__header--scroll">
+		    {% include "menu-top.html" %}
+	  	</header>
+	  	<div class="mdl-layout__drawer">
+	    <span class="mdl-layout-title"><a class="decoratiom-none" href="{% url 'index' %}">Consolid</a></span>
+	    	{% if user.is_authenticated %}
+		    <nav class="mdl-navigation">
+		    	<a class="mdl-navigation__link" href="{% url 'comunicados' %}">Comunicados</a>
+			    <a class="mdl-navigation__link" href="">Circulares</a>
+		      	<a class="mdl-navigation__link" href="">Tabla de Comiciones</a>
+		      	<a class="mdl-navigation__link" href="">Avisos Varios</a>
+		    </nav>
+		    {% endif %}
+	  	</div>
+	  	<main class="mdl-layout__content">
+	    	<div class="page-content">
+	    		{% block header %}{% endblock %}
+	    		{% block content %}{% endblock %} 
+	    	</div>	  
+	    	<footer class="mdl-mini-footer">
+		  	<div class="mdl-mini-footer__left-section">
+		    	<div class="mdl-logo">Nava Castro Consolidadora</div>
+		    	<ul class="mdl-mini-footer__link-list">
+		      		<li><a href="#">Ayuda</a></li>
+		      		<li><a href="#">Terminos y Condiciones</a></li>
+		    	</ul>
+		  	</div>
+		  	<div class="mdl-mini-footer__right-section">
+				<ul class="mdl-mini-footer__link-list">
+		      		<li><a href="#">©Viajes Nava Castro 2017</a></li>
+		    	</ul>
+		  	</div>
+		</footer>  		    	 	
+	  	</main>		  	  	
+	</div>	
+	{% include "scripts.html" %}
+    {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,16 @@
+<div class="mdl-layout__header-row">
+  	<!-- Title -->
+		<span class="mdl-layout-title"><a class="decoratiom-none" href="{% url 'index' %}">Consolid</a></span>
+  	<!-- Add spacer, to align navigation to the right -->
+  	<div class="mdl-layout-spacer"></div>
+  	<!-- Navigation. We hide it in small screens. -->
+  	<nav class="mdl-navigation mdl-layout--large-screen-only">
+  		{% if user.is_authenticated %}
+  			<a class="mdl-navigation__link" href="">¡Hola {{user.username}}!</a>
+        	<a class="mdl-navigation__link" href="{% url 'logout' %}">Salir</a>
+  		{% else %}
+        	<a class="mdl-navigation__link" href="{% url 'login' %}">Iniciar seción</a>
+        	<a class="mdl-navigation__link" href="">Crear cuenta</a>
+        {% endif %}
+  	</nav>
+</div>
