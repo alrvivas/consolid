@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'consolidadora',
     'banners',
     'comunicados',
+    'comisiones',
 ]
 
 MIDDLEWARE = [
@@ -84,7 +85,10 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
+"""import dj_database_url
+DATABASES = {'default': dj_database_url.config()}
+DATABASES['default'] =  dj_database_url.config()
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators

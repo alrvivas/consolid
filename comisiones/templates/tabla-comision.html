@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+{% block statics %}
+<!-- Wide card with share menu button -->
+<style>
+.demo-card-wide.mdl-card {
+  width: 100%;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;  
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+</style>
+{% endblock %}
+{% block content %}	
+<div class="mdl-grid">
+	<div class="mdl-layout-spacer"></div>
+	<div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--8-col-phone ">		
+		<div class="mdl-grid"><!--comunicados-->
+			<table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp">
+				<thead>
+				    <tr>
+				      <th class="mdl-data-table__cell--non-numeric cantidad-text">Comisión</th>
+				      <th class="mdl-data-table__cell--non-numeric">Venta</th>
+				      <th>Vigencia</th>
+				    </tr>
+			  	</thead>
+			  	<tbody class="lista-venta">
+		  		{% for t in comisiones %}
+			  		<tr>
+			  			<td class='mdl-data-table__cell--non-numeric'>
+			  				{{t.comision}}
+			  			</td>
+			  			<td class='mdl-data-table__cell--non-numeric'>
+			  				de {{t.venta_minima}} a {{t.venta_maxima}}
+			  			</td>
+			  			<td >
+			  				{{t.fecha_vigencia}}
+			  			</td>
+			  		</tr>	
+		  		{% endfor %}
+			  	</tbody>
+			</table>			
+		</div>
+	</div>
+	<div class="mdl-layout-spacer"></div>
+</div>
+{% endblock %}
