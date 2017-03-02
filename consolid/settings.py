@@ -25,7 +25,7 @@ SECRET_KEY = 'm+aqv3+$wq6wjf6o^x7@0g&nb7i35&saxpun#m!1qp4rdx79pm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['consolid.herokuapp.com',]
 
 
 # Application definition
